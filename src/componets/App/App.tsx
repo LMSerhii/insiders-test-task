@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import BuyToken from '../BuyToken/BuyToken';
-import SellToken from '../SellToken/SellToken';
+import Layout from '../Layout/Layout';
 
 export default function App() {
   const [usdtEthPrice, setUsdtEthPrice] = useState<number>(0);
@@ -48,9 +48,8 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <Layout>
       <BuyToken usdtEthPrice={usdtEthPrice} error={error} message={message} />
-      <SellToken usdtEthPrice={usdtEthPrice} error={error} message={message} />
-    </>
+    </Layout>
   );
 }
